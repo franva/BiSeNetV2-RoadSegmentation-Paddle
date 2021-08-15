@@ -24,19 +24,19 @@ This is a project aiming at training an AI model for semantic segmentation purpo
 <br />
 <div style="width:90%; margin:10px; display: flex; justify-content:center">
     <div style="width:40%; float:left; margin:10px;">
-  		<img src="https://ai-studio-static-online.cdn.bcebos.com/f2ea9de30ceb418682fc3c6aaa852e88e045d5451cd0447a9971942849216165" />
+  		<img src="./notebooks/images/lao1.jpeg" />
 	</div>
     <div style="width:40%; float:right">
-  		<img src="https://ai-studio-static-online.cdn.bcebos.com/dc87d0976e604a849dd08da9b0211755113a5831c9fc4c3cb3dcf32374edcc2c" />
+  		<img src="./notebooks/images/lao2.jpeg" />
 	</div>
 </div>
 
 <div style="width:90%; margin:10px; display: flex; justify-content:center">
     <div style="width:40%; float:left; margin:10px;">
-  		<img src="https://ai-studio-static-online.cdn.bcebos.com/a5eec0a4ec2d4bcca15b253e8637eaeef4c6d2f1861a4fcdbd24a99797fd3179" />
+  		<img src="./notebooks/images/lao3.jpeg" />
 	</div>
     <div style="width:40%; float:right">
-  		<img src="https://ai-studio-static-online.cdn.bcebos.com/f061fa37a60248e39b49adab97e9b1297b50ffe630e84fa5a7959f73f6a362bc" />
+  		<img src="./notebooks/images/lao4.jpeg" />
 	</div>
 </div>
 
@@ -50,12 +50,12 @@ This is a project aiming at training an AI model for semantic segmentation purpo
 **场景四**
 
 澳洲的各家超市门口都摆满了trolleys(购物时用的小车),像Coles, Woolworth少则几百,但如美国来的Costco大型购物超市 门前的购物车更是数不胜数. 而超市内路面由于澳洲安全法规严格,路面都是超级平整易行.是非常好的大规模使用My Buddy的场所. 所以我在想....要不要.....
-![Costco](https://ai-studio-static-online.cdn.bcebos.com/121a93a218444d178a080f4af19937e36d1046e40c944337badce34279a3eeee)
+![Costco](./notebooks/images/Costco.jpg)
 
 甚至,这边的AusPost的邮递员 都是很多老年人推着小车
 
 
-![postman](https://ai-studio-static-online.cdn.bcebos.com/881f4f3ad099415caf76a2887f8177fc98a3b5af631b46299adf51689a2177f9)
+![postman](./notebooks/images/postman.jpg)
 
 
 
@@ -71,11 +71,11 @@ This is a project aiming at training an AI model for semantic segmentation purpo
 
 <div style="width:90%; margin:10px; display: flex; justify-content:center">
    <div style="width:40%; float:left; margin:10px;">
-      <img src="https://ai-studio-static-online.cdn.bcebos.com/57d2ed5d4f5e4353a2da0c82c9b5deafce4d5673507b4d3ea333609a73a7a1c7" />
+      <img src="./notebooks/images/datacollecting.jpeg" />
   </div>
 
   <div style="width:40%; float:left; margin:10px;">
-      <img src="https://ai-studio-static-online.cdn.bcebos.com/db79c083b7674b3a8e011a2ef95eec4951147807dd014d8a86c84e3c35f71644" />
+      <img src="./notebooks/images/datacar2.jpg" />
   </div>
 </div>
   
@@ -149,7 +149,7 @@ plt.imshow(view)
 plt.show()
 
 ```
-![](https://ai-studio-static-online.cdn.bcebos.com/96b3d864f62247f699f4cac2da1cd71ad8afeda370854e4aa97b60d0e2fb982d)
+![image sample](./notebooks/images/view.png)
 
 
 # 三、模型选择和开发
@@ -164,13 +164,13 @@ plt.show()
 > 通过实验发现， Deeplabv3plus + MobileNetV3（DLV3PMNV3）并不能得到很好的精度。原因是因为 MobileNetV3作为骨干网络本身层数较少 不能学习足够多的特征，导致在Deeplabv3plus的网络中得不到较好的特征值 进而导致整体准确度非常低。 换用BiSeNetV2做实验之后 发现效果远远好于DLV3PMNV3网络。 并且发现 BiseNetV2有着很高的 FPS 这符合项目的需求.(虽然在下图种BiSeNetV2的mIoU看起来比Deeplabv3要低很多, 但是那个Deeplabv3是以ResNet为backbone的,而且 BiSeNetV2在实验过程中 证明它的准确率足够用.
 > 
 
-![](https://ai-studio-static-online.cdn.bcebos.com/b24ff93561464deeb1c681afe3578a3c49c1cd6fc68d47f2acb6c729b82de1b3)
+![performance](./notebooks/images/performance.png)
 
 
 
 ## 1.模型组网
 
-![](https://ai-studio-static-online.cdn.bcebos.com/0d743126153243a5b9925213449e250252682ef9718c4205872a58cedf0a9e45)
+![Netowrk Architecture](./notebooks/images/network_architecture.png)
 
 
 
@@ -648,11 +648,11 @@ predict(
 ```
 
 
-![](https://ai-studio-static-online.cdn.bcebos.com/157433c09c0b4669afe896c0902e500fd32b31660d5c4703984c87c37933d021)
+![predction1](./notebooks/images/result1.jpeg)
 
-![](https://ai-studio-static-online.cdn.bcebos.com/a3b07380bf7b4e7da09201ff666fb045512509c75952485c99b6fd9126d154dc)
+![prediction2](./notebooks/images/result2.jpeg)
 
-![](https://ai-studio-static-online.cdn.bcebos.com/4fac172310b94d4797579e167cfcddb3a91cd11efbef4f749ad4103a33ab36ed)
+![prediction3](./notebooks/images/result3.jpeg)
 
 可以看出, 还是有些部分没有标注准确, 不过整体来说 还是挺满意的了.
 
@@ -664,12 +664,12 @@ predict(
 <div style="width:90%; margin:10px; display: flex; justify-content:center">
    <div style="width:40%; float:left; margin:10px;">
       <b>Image with maske</b>
-      <img src="https://ai-studio-static-online.cdn.bcebos.com/51e7f9339def4dd3bbf4fc7fccff087e6b7a638f7ebe444ea9c508cce8e078e2" />
+      <img src="./notebooks/images/outdoor.png" />
   </div>
 
   <div style="width:40%; float:left; margin:10px;">
       <b>Just the maske</b>
-      <img src="https://ai-studio-static-online.cdn.bcebos.com/74c85a984e274ea5ab9f34a7fe8ad6af0fb86c3ed32a4b16aa3ffc89c8c1a573" />
+      <img src="./notebooks/images/outdoormask.png" />
   </div>
 </div>
 
